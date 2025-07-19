@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import Page from './page';
 
 /**
@@ -21,8 +20,6 @@ class MatchPage extends Page {
     }
 
     public async getPlayerNames (){
-        //TODO this is a place holder, replace with an isLoaded function
-        await browser.pause(5000);
         const playerNames = await this.playerNames;
         const playerNameStrings = [];
         await playerNames.forEach(async (playerName) => {
