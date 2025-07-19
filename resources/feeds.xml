@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<PutDataRequest RequestId="eedf6ae1-c3af-4c13-9d2f-c32bd4ba9b6c" MessageTime="2025-07-14T10:45:00.430+00:00" TransmissionComplete="true" TransmissionSuspended="false">
+    <MatchInformation>
+        <General TypeOfSport="soccer" CompetitionName="Major League Soccer - Regular Season" CompetitionId="MLS-COM-000001" Host="Major League Soccer (Major League Soccer, L.L.C.)" Type="League" MatchDay="24" MatchType="MATCHWEEK 24" Season="2025" SeasonId="MLS-SEA-0001K9" PlannedKickoffTime="2025-07-13T23:00:00.000+00:00" KickoffTime="2025-07-13T23:12:25.679+00:00" MatchId="MLS-MAT-00062J" DlProviderId="7867" MatchTitle="St. Louis CITY SC:Portland Timbers" HomeTeamName="St. Louis CITY SC" HomeTeamId="MLS-CLU-00001L" HomeTeamShortName="St. Louis" HomeTeamThreeLetterCode="STL" GuestTeamName="Portland Timbers" GuestTeamId="MLS-CLU-00000P" GuestTeamShortName="Portland" GuestTeamThreeLetterCode="POR" Result="2:1" SubLeague="WESTERN CONFERENCE" />
+        <Environment Country="USA" StadiumId="MLS-STA-00000U" StadiumName="Energizer Park" StadiumAddress="Market St 2100, 63103 St. Louis, MO" Roof="open" Floodlight="off" Temperature="25" AirHumidity="84" AirPressure="1014" PitchErosion="none" NumberOfSpectators="22423" StadiumCapacity="22500" Precipitation="none" SoldOut="false" PitchX="105.00" PitchY="68.00" />
+        <Teams>
+            <Team TeamId="MLS-CLU-00000P" TeamName="Portland Timbers" ShortName="Portland" ThreeLetterCode="POR" Role="guest" PlayerShirtType="Away jersey" PlayerShirtMainColor="#e0d8c9" PlayerShirtSecondaryColor="#434a47" PlayerShirtNumberColor="#434a47" LineUp="4-3-3">
+                <Players>
+                    <Player PersonId="MLS-OBJ-000021" ShirtNumber="41" FirstName="James" LastName="Pantemis" Shortname="J. Pantemis" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-000022" ShirtNumber="4" FirstName="Kamal" LastName="Miller" Shortname="K. Miller" Starting="true" PlayingPosition="LB" TeamLeader="true" />
+                    <Player PersonId="MLS-OBJ-0000C5" ShirtNumber="16" FirstName="Maxime" LastName="Crépeau" Shortname="M. Crépeau" Starting="true" PlayingPosition="GK" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000E7" ShirtNumber="15" FirstName="Eric" LastName="Miller" Shortname="E. Miller" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000H0" ShirtNumber="22" FirstName="Omir" LastName="Fernández" Shortname="O. Fernández" Starting="false" PlayingPosition="RW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JC" ShirtNumber="13" FirstName="Dario" LastName="Zuparic" Shortname="D. Zuparic" Starting="true" PlayingPosition="RCB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JG" ShirtNumber="29" FirstName="Juan" LastName="Mosquera" Shortname="J. Mosquera" Starting="true" PlayingPosition="RB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JM" ShirtNumber="21" FirstName="Diego" LastName="Chará" Shortname="D. Chará" Starting="false" PlayingPosition="CM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JN" ShirtNumber="17" FirstName="Cristhian" LastName="Paredes" Shortname="C. Paredes" Starting="false" PlayingPosition="HRM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JP" ShirtNumber="24" FirstName="David" LastName="Ayala" Shortname="D. Ayala" Starting="true" PlayingPosition="HRM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JR" ShirtNumber="30" FirstName="Santiago" LastName="Moreno" Shortname="S. Moreno" Starting="true" PlayingPosition="RW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000JU" ShirtNumber="9" FirstName="Felipe" LastName="Mora" Shortname="F. Mora" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0006WO" ShirtNumber="19" FirstName="Kevin" LastName="Kelsy" Shortname="K. Kelsy" Starting="true" PlayingPosition="CF" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007FH" ShirtNumber="80" FirstName="Joao" LastName="Ortiz" Shortname="J. Ortiz" Starting="true" PlayingPosition="CM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007S4" ShirtNumber="20" FirstName="Finn" LastName="Surman" Shortname="F. Surman" Starting="true" PlayingPosition="LCB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007ZO" ShirtNumber="23" FirstName="Ian" LastName="Smith" Shortname="I. Smith" Starting="false" PlayingPosition="LW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-000814" ShirtNumber="27" FirstName="Jimer" LastName="Fory" Shortname="J. Fory" Starting="true" PlayingPosition="LW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-00082E" ShirtNumber="10" FirstName="David" LastName="Da Costa" Shortname="D. Da Costa" Starting="true" PlayingPosition="HLM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-00082Z" ShirtNumber="88" FirstName="Gage" LastName="Guerra" Shortname="G. Guerra" Starting="false" PlayingPosition="RCB" TeamLeader="false" />
+                </Players>
+                <TrainerStaff>
+                    <Trainer PersonId="MLS-OBJ-0001T0" Role="assistantHeadcoach" FirstName="Dave" LastName="van den Bergh" Shortname="D. van den Bergh" />
+                    <Trainer PersonId="MLS-OBJ-0001VJ" Role="assistantHeadcoach" FirstName="Shannon" LastName="Murray" Shortname="S. Murray" />
+                    <Trainer PersonId="MLS-OBJ-0001VT" Role="assistantHeadcoach" FirstName="Liam" LastName="Ridgewell" Shortname="L. Ridgewell" />
+                    <Trainer PersonId="MLS-OBJ-0000B5" Role="headcoach" FirstName="Phil" LastName="Neville" Shortname="P. Neville" />
+                </TrainerStaff>
+                <OfficialStaff>
+            </OfficialStaff>
+            </Team>
+            <Team TeamId="MLS-CLU-00001L" TeamName="St. Louis CITY SC" ShortName="St. Louis" ThreeLetterCode="STL" Role="home" PlayerShirtType="Home jersey" PlayerShirtMainColor="#E80A4D" PlayerShirtSecondaryColor="#FFFFFF" PlayerShirtNumberColor="#FFFFFF" LineUp="4-3-3">
+                <Players>
+                    <Player PersonId="MLS-OBJ-0000KH" ShirtNumber="91" FirstName="Jaziel" LastName="Orozco" Shortname="J. Orozco" Starting="true" PlayingPosition="RB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000PD" ShirtNumber="11" FirstName="Simon" LastName="Becher" Shortname="S. Becher" Starting="false" PlayingPosition="LW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000YP" ShirtNumber="15" FirstName="Josh" LastName="Yaro" Shortname="J. Yaro" Starting="true" PlayingPosition="RCB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0000ZG" ShirtNumber="20" FirstName="Akil" LastName="Watts" Shortname="A. Watts" Starting="false" PlayingPosition="CM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001D2" ShirtNumber="22" FirstName="Kyle" LastName="Hiebert" Shortname="K. Hiebert" Starting="false" PlayingPosition="RB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001I2" ShirtNumber="12" FirstName="Célio" LastName="Pompeu" Shortname="C. Pompeu" Starting="true" PlayingPosition="LW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001I7" ShirtNumber="1" FirstName="Roman" LastName="Bürki" Shortname="R. Bürki" Starting="true" PlayingPosition="GK" TeamLeader="true" />
+                    <Player PersonId="MLS-OBJ-0001J2" ShirtNumber="9" FirstName="João" LastName="Klauss" Shortname="J. Klauss" Starting="true" PlayingPosition="CF" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001J7" ShirtNumber="10" FirstName="Eduard" LastName="Löwen" Shortname="E. Löwen" Starting="false" PlayingPosition="HRM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001J9" ShirtNumber="39" FirstName="Ben" LastName="Lundt" Shortname="B. Lundt" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001JJ" ShirtNumber="7" FirstName="Tomas" LastName="Ostrak" Shortname="T. Ostrak" Starting="true" PlayingPosition="HRM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0001JP" ShirtNumber="99" FirstName="Jayden" LastName="Reid" Shortname="J. Reid" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-00028U" ShirtNumber="33" FirstName="Tyson" LastName="Pearce" Shortname="T. Pearce" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0003E8" ShirtNumber="45" FirstName="Xande" LastName="Silva" Shortname="X. Silva" Starting="false" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-000541" ShirtNumber="14" FirstName="Tomas" LastName="Totland" Shortname="T. Totland" Starting="true" PlayingPosition="LB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007I8" ShirtNumber="3" FirstName="Jake" LastName="Girdwood-Reich" Shortname="J. Girdwood-Reich" Starting="true" PlayingPosition="LCB" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007I9" ShirtNumber="36" FirstName="Cedric" LastName="Teuchert" Shortname="C. Teuchert" Starting="true" PlayingPosition="CM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007K6" ShirtNumber="17" FirstName="Marcel" LastName="Hartel" Shortname="M. Hartel" Starting="true" PlayingPosition="RW" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-0007WF" ShirtNumber="6" FirstName="Conrad" LastName="Wallem" Shortname="C. Wallem" Starting="true" PlayingPosition="HLM" TeamLeader="false" />
+                    <Player PersonId="MLS-OBJ-00082A" ShirtNumber="71" FirstName="Joseph" LastName="Zalinsky" Shortname="J. Zalinsky" Starting="false" TeamLeader="false" />
+                </Players>
+                <TrainerStaff>
+                    <Trainer PersonId="MLS-OBJ-0001X9" Role="assistantHeadcoach" FirstName="Elvir" LastName="Kafedžić" Shortname="E. Kafedžić" />
+                    <Trainer PersonId="MLS-OBJ-0003UW" Role="assistantHeadcoach" FirstName="Baggio" LastName="Hušidić" Shortname="B. Hušidić" />
+                    <Trainer PersonId="MLS-OBJ-000893" Role="headcoach" FirstName="David" LastName="Critchley" Shortname="D. Critchley" />
+                </TrainerStaff>
+                <OfficialStaff>
+            </OfficialStaff>
+            </Team>
+        </Teams>
+        <Referees>
+            <Referee PersonId="MLS-OBJ-0003A0" Role="referee" FirstName="Ricardo" LastName="Montero" Shortname="R. Montero" />
+            <Referee PersonId="MLS-OBJ-000225" Role="fourthOfficial" FirstName="Rubiel" LastName="Vazquez" Shortname="R. Vazquez" />
+            <Referee PersonId="MLS-OBJ-0001H4" Role="videoReferee" FirstName="Jorge" LastName="González" Shortname="J. González" />
+            <Referee PersonId="MLS-OBJ-0001ZX" Role="firstAssistant" FirstName="Logan" LastName="Brown" Shortname="L. Brown" />
+            <Referee PersonId="MLS-OBJ-00021Y" Role="secondAssistant" FirstName="Jeffrey" LastName="Swartzel" Shortname="J. Swartzel" />
+            <Referee PersonId="MLS-OBJ-0001G8" Role="videoRefereeAssistant" FirstName="Fabio" LastName="Tovar" Shortname="F. Tovar" />
+        </Referees>
+        <OtherGameInformation TotalTimeFirstHalf="2818480" TotalTimeSecondHalf="3062480" PlayingTimeFirstHalf="1997160" PlayingTimeSecondHalf="1834680" />
+    </MatchInformation>
+</PutDataRequest>
