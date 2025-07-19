@@ -1,0 +1,40 @@
+import fs from 'fs';
+import path from 'path';
+import { XMLParser } from 'fast-xml-parser';
+
+
+export class feedParser {
+
+
+  public getPlayers(feedsFilePath = '../resources/feeds.xml') {
+    const feedsPath = path.join(__dirname, feedsFilePath);
+    const feedsXml = fs.readFileSync(feedsPath, 'utf-8');
+    const parser = new XMLParser({
+      // Don't check for attributes. Treats everything as tag
+      ignoreAttributes: false,
+      // Identify attributes with this prefix otherwise treat them as a tag
+      attributeNamePrefix: '',
+    });
+
+    const parsedFeed = parser.parse(feedsXml);
+    const teams = parsedFeed.PutDataRequest.MatchInformation.Teams.Team;
+
+    const playerData = [];
+
+    for (const team of teams) {
+      const players = team.Players.Player;
+
+      for (const player of players) {
+        console.log( player.Shortname)
+        console.log( player.Starting )
+        playerData.push({
+          shortname: player.Shortname,
+          //Convert the string "true" or "false" to a boolean value
+          starting: player.Starting === 'true',
+        });
+      }
+    }
+
+    return playerData;
+  }
+}

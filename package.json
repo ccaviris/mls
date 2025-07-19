@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "fast-xml-parser": "^5.2.5",
     "webdriverio": "^9.18.1"
   },
   "devDependencies": {
