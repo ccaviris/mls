@@ -1,10 +1,11 @@
 //import { expect } from '@wdio/globals'
-import matchPage from '../pageobjects/match.page'
+import matchPage from '../pageobjects/match.page.ts'
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+describe('Validate match rosters ', () => {
+    it('should validate starting rosters', async () => {
         await matchPage.open()
-        await matchPage.getPlayerNames()
+        const observedPlayerNames = await matchPage.getPlayerNames();
+        console.log('Observed ' + observedPlayerNames.toString())
     })
 })
 

@@ -22,10 +22,14 @@ class MatchPage extends Page {
 
     public async getPlayerNames (){
         //TODO this is a place holder, replace with an isLoaded function
-        await browser.pause(15000);
+        await browser.pause(5000);
         const playerNames = await this.playerNames;
         const playerNameStrings = [];
-        playerNames.forEach(async (playerName) => console.log(await playerName.getText()));
+        await playerNames.forEach(async (playerName) => {
+            const name = await playerName.getText();
+            playerNameStrings.push(name);
+        });
+        return playerNameStrings;
     }
 }
 
