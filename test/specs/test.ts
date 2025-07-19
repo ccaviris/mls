@@ -8,8 +8,8 @@ describe('Validate match rosters ', () => {
         const observedPlayerNames = await matchPage.getPlayerNames();
         console.log('Observed ' + observedPlayerNames.toString());
         const parser = new feedParser();  
-        const expectedPlayers = parser.getPlayers();
-        console.log('Expected ' + expectedPlayers.length);
+        const expectedPlayers = parser.getStartingPlayers();
+        console.log('Expected ' + expectedPlayers.toString());
     })
 })
 

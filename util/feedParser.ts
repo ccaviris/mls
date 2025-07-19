@@ -25,8 +25,6 @@ export class feedParser {
       const players = team.Players.Player;
 
       for (const player of players) {
-        console.log( player.Shortname)
-        console.log( player.Starting )
         playerData.push({
           shortname: player.Shortname,
           //Convert the string "true" or "false" to a boolean value
@@ -37,4 +35,15 @@ export class feedParser {
 
     return playerData;
   }
+
+  getStartingPlayers(feedsFilePath = '../resources/feeds.xml'){
+    const players = this.getPlayers(feedsFilePath);
+    const startingPlayers = [];
+    for (const player of players) {
+        if(player.starting === true){
+          startingPlayers.push(player.shortname)
+        }
+  }
+  return startingPlayers;
+}
 }
