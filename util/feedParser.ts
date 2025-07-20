@@ -3,8 +3,7 @@ import path from 'path';
 import { XMLParser } from 'fast-xml-parser';
 
 
-export class feedParser {
-
+class feedParser {
 
   public getPlayers(feedsFilePath = '../resources/feeds.xml') {
     const feedsPath = path.join(__dirname, feedsFilePath);
@@ -47,3 +46,4 @@ export class feedParser {
   return startingPlayers;
 }
 }
+export default new feedParser();
