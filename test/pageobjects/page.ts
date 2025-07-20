@@ -17,20 +17,16 @@ export default class Page {
     }
 
     public async isLoaded(selectors = {}) {
-        
-        console.log('isLoaded page in')
         for (const [key, selector] of Object.entries(selectors)) {
             console.log(await $(selector).waitForDisplayed({timeoutMsg: `Failed to load the ${key} element.`}));
         }
-        
-        console.log('isLoaded page out')
     }
 
     public async waitForDialogueAndAcceptCookies(){
         try{
             const accept = this.acceptAndContinueButton;
             await accept.waitForDisplayed();
-            await accept.click();
+            return await accept.click();
         } catch (error) {
             console.log('The confirmation button for the cookie consent popup failed to load. Attempting to continue with test execution.')
         }

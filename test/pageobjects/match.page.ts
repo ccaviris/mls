@@ -10,9 +10,7 @@ class MatchPage extends Page {
             startingPlayers: '.mls-o-pitch__foreground',
             benchPlayers: '.mls-c-lineups__substitutions',
             managers: '.mls-c-lineups__managers',
-            playerNames: '.mls-o-player-block__player-name',
-            junkSelector: 'Hello THere foo bar'
-            
+            playerNames: '.mls-o-player-block__player-name'
         }
     }
 
