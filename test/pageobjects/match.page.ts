@@ -11,8 +11,8 @@ class MatchPage extends Page {
             benchPlayers: '.mls-c-lineups__substitutions',
             managers: '.mls-c-lineups__managers',
             playerNames: '.mls-o-player-block__player-name',
-            homeTeamHeader: '.--home',
-            awayTeamHeader: '.--away',
+            homeClubHeader: '.--home',
+            awayClubHeader: '.--away',
             clubNames: '.mls-c-club__shortname',
             homeClubFormation: '.mls-o-pitch__club-formation--home',
             awayClubFormation: '.mls-o-pitch__club-formation--away',
@@ -21,6 +21,14 @@ class MatchPage extends Page {
             homeClubManagers: '.mls-o-managers--home',
             awayClubManagers: '.mls-o-managers--away'
         }
+    }
+
+    public get homeClubName () {
+        return $(`${this.selectors.homeClubHeader} ${this.selectors.clubNames}`)
+    }
+
+    public get awayClubeName () {
+        return $(`${this.selectors.awayClubHeader} ${this.selectors.clubNames}`)
     }
 
     public get startingPlayers () {
