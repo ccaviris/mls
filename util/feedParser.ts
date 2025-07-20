@@ -59,31 +59,46 @@ class feedParser {
     return playerData;
   }
 
-  filterNames(type = 'starting', feedsFilePath: any){
+  filterNames(type = 'starting', home = true, feedsFilePath: any){
     const players = this.getNames(feedsFilePath);
     const startingPlayers = [];
     for (const player of players) {
-        if(player.type === type){
+        if(player.type === type && player.home === home){
           startingPlayers.push(player.shortname)
         }
     }
     return startingPlayers;
   }
 
-  getStartingPlayers(feedsFilePath: string){
-    return this.filterNames('starting', feedsFilePath);
+  getHomeStartingPlayers(feedsFilePath: string){
+    return this.filterNames('starting', true, feedsFilePath);
   }
 
-  getBenchPlayers(feedsFilePath: string){
-    return this.filterNames('bench', feedsFilePath);
+  getAwayStartingPlayers(feedsFilePath: string){
+    return this.filterNames('starting', false, feedsFilePath);
   }
 
-  getManagers(feedsFilePath: string){
-    return this.filterNames('manager', feedsFilePath);
+  getHomeBenchPlayers(feedsFilePath: string){
+    return this.filterNames('bench', true, feedsFilePath);
   }
 
-  getClubNames(feedsFilePath: string){
-    return this.filterNames('club', feedsFilePath);
+  getAwayBenchPlayers(feedsFilePath: string){
+    return this.filterNames('bench', false, feedsFilePath);
+  }
+
+  getHomeManagers(feedsFilePath: string){
+    return this.filterNames('manager', false, feedsFilePath);
+  }
+  getAwayManagers(feedsFilePath: string){
+    return this.filterNames('manager', false, feedsFilePath);
+  }
+
+  getHomeClubName(feedsFilePath: string){
+    return this.filterNames('club', true, feedsFilePath)[0];
+  }
+
+  getAwayClubName(feedsFilePath: string){
+    return this.filterNames('club', false, feedsFilePath)[0];
   }
 
 }
