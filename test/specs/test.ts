@@ -1,4 +1,3 @@
-//import { expect } from '@wdio/globals'
 import { expect } from 'chai';
 import matchPage from '../pageobjects/match.page.ts'
 import feedParser from '../../util/feedParser.ts'
@@ -16,10 +15,10 @@ describe('Validate match rosters ', () => {
     it('should validate club names', async () => {
         const observedClubNames = await matchPage.getClubNames();
         const expectedHomeClub = feedParser.getHomeClubName(feedXml);
-        const expectedAwatClub = feedParser.getAwayClubName(feedXml);
+        const expectedAwayClub = feedParser.getAwayClubName(feedXml);
         
         expect(observedClubNames.home).to.equal(expectedHomeClub);
-        expect(observedClubNames.away).to.equal(expectedAwatClub);
+        expect(observedClubNames.away).to.equal(expectedAwayClub);
     })
 
     it('should validate the home club\'s starting roster', async () => {
