@@ -10,7 +10,16 @@ class MatchPage extends Page {
             startingPlayers: '.mls-o-pitch__foreground',
             benchPlayers: '.mls-c-lineups__substitutions',
             managers: '.mls-c-lineups__managers',
-            playerNames: '.mls-o-player-block__player-name'
+            playerNames: '.mls-o-player-block__player-name',
+            homeTeamHeader: '.--home',
+            awayTeamHeader: '.--away',
+            clubNames: '.mls-c-club__shortname',
+            homeClubFormation: '.mls-o-pitch__club-formation--home',
+            awayClubFormation: '.mls-o-pitch__club-formation--away',
+            homeClubBench: '.mls-o-substitutions--home',
+            awayClubBench: '.mls-o-substitutions--away',
+            homeClubManagers: '.mls-o-managers--home',
+            awayClubManagers: '.mls-o-managers--away'
         }
     }
 
