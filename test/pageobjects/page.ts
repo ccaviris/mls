@@ -16,19 +16,32 @@ export default class Page {
         return browser.url(`https://www.mlssoccer.com/${path}`)
     }
 
-    public async isLoaded(selectors = {}) {
+    public async isLoaded(selectors = {}, attemptRecovery = true) {
         for (const [key, selector] of Object.entries(selectors)) {
-            console.log(await $(selector).waitForDisplayed({timeoutMsg: `Failed to load the ${key} element.`}));
+            try{
+                await $(selector).waitForDisplayed({timeoutMsg: `Failed to load the ${key} element.`});
+            } catch (error) {
+                if(attemptRecovery){
+                    console.log(`Failed to load the ${key} element. Attempting to continue with test execution.`);
+                } else {
+                    throw error;
+                }
+
+            }
         }
     }
 
-    public async waitForDialogueAndAcceptCookies(){
+    public async waitForDialogueAndAcceptCookies(attemptRecovery = true){
         try{
             const accept = this.acceptAndContinueButton;
-            await accept.waitForDisplayed();
+            await accept.waitForDisplayed({timeoutMsg: 'The confirmation button for the cookie consent popup failed to load.'});
             return await accept.click();
         } catch (error) {
-            console.log('The confirmation button for the cookie consent popup failed to load. Attempting to continue with test execution.')
+            if(attemptRecovery){
+                console.log('The confirmation button for the cookie consent popup failed to load. Attempting to continue with test execution.');
+            } else {
+                throw error;
+            }
         }
     }
 }
