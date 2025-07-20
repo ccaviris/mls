@@ -16,15 +16,23 @@ export default class Page {
         return browser.url(`https://www.mlssoccer.com/${path}`)
     }
 
-    public async isLoaded(selectors) {
-        await selectors.forEach(async (selector) => {
-            await $(selector).waitForDisplayed();
-        });
+    public async isLoaded(selectors = {}) {
+        
+        console.log('isLoaded page in')
+        for (const [key, selector] of Object.entries(selectors)) {
+            console.log(await $(selector).waitForDisplayed({timeoutMsg: `Failed to load the ${key} element.`}));
+        }
+        
+        console.log('isLoaded page out')
     }
 
-    public waitForDialogueAndAcceptCookies(){
-        const accept = this.acceptAndContinueButton;
-        accept.waitForDisplayed();
-        accept.click();
+    public async waitForDialogueAndAcceptCookies(){
+        try{
+            const accept = this.acceptAndContinueButton;
+            await accept.waitForDisplayed();
+            await accept.click();
+        } catch (error) {
+            console.log('The confirmation button for the cookie consent popup failed to load. Attempting to continue with test execution.')
+        }
     }
 }

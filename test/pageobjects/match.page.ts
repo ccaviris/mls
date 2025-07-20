@@ -10,7 +10,8 @@ class MatchPage extends Page {
             startingPlayers: '.mls-o-pitch__foreground',
             benchPlayers: '.mls-c-lineups__substitutions',
             managers: '.mls-c-lineups__managers',
-            playerNames: '.mls-o-player-block__player-name'
+            playerNames: '.mls-o-player-block__player-name',
+            junkSelector: 'Hello THere foo bar'
             
         }
     }
@@ -35,7 +36,7 @@ class MatchPage extends Page {
     }
 
     public async isLoaded(){
-        return super.isLoaded(this.selectors);
+        return await super.isLoaded(this.selectors);
     }
 
     public async getPlayerNames (playerType = 'starting'){
