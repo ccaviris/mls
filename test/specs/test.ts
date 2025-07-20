@@ -13,7 +13,7 @@ describe('Validate match rosters ', () => {
         await matchPage.isLoaded();
     });
 
-    it.only ('should validate club names', async () => {
+    it('should validate club names', async () => {
         const observedClubNames = await matchPage.getClubNames();
         const expectedHomeClub = feedParser.getHomeClubName(feedXml);
         const expectedAwatClub = feedParser.getAwayClubName(feedXml);
@@ -22,21 +22,39 @@ describe('Validate match rosters ', () => {
         expect(observedClubNames.away).to.equal(expectedAwatClub);
     })
 
-    it('should validate starting rosters', async () => {
+    it('should validate the home club\'s starting roster', async () => {
         const observedPlayers = await matchPage.getPlayerNames();
-        const expectedPlayers = feedParser.getStartingPlayers(feedXml);
+        const expectedPlayers = feedParser.getHomeStartingPlayers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 
-    it('should validate bench rosters', async () => {
-        const observedPlayers = await matchPage.getPlayerNames('bench');
-        const expectedPlayers = feedParser.getBenchPlayers(feedXml);
+    it('should validate the away club\'s starting roster', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('startingAway');
+        const expectedPlayers = feedParser.getAwayStartingPlayers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 
-    it('should validate manager rosters', async () => {
-        const observedPlayers = await matchPage.getPlayerNames('manager');
-        const expectedPlayers = feedParser.getManagers(feedXml);
+    it('should validate the home club\'s bench roster', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('benchHome');
+        const expectedPlayers = feedParser.getHomeBenchPlayers(feedXml);
+        expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
+    })
+
+    it('should validate the away club\'s bench roster', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('benchAway');
+        const expectedPlayers = feedParser.getAwayBenchPlayers(feedXml);
+        expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
+    })
+
+    it('should validate the home club\'s manager roster', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('managerHome');
+        const expectedPlayers = feedParser.getHomeManagers(feedXml);
+        expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
+    })
+
+    it('should validate the away club\'s manager roster', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('managerAway');
+        const expectedPlayers = feedParser.getAwayManagers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 })
