@@ -5,7 +5,7 @@ import { XMLParser } from 'fast-xml-parser';
 
 class feedParser {
 
-  public getPlayers(feedsFilePath) {
+  public getNames(feedsFilePath: any) {
     const feedsPath = path.join(__dirname, feedsFilePath);
     const feedsXml = fs.readFileSync(feedsPath, 'utf-8');
     const parser = new XMLParser({
@@ -21,18 +21,26 @@ class feedParser {
     const playerData = [];
 
     for (const team of teams) {
+      playerData.push({
+        shortname: team.ShortName,
+        type: 'club',
+        home: team.Role === 'home',
+      })
+
       const players = team.Players.Player;
 
       for (const player of players) {
         if(player.Starting === 'true'){
           playerData.push({
             shortname: player.Shortname,
-            role: 'starting',
+            type: 'starting',
+            home: team.Role === 'home',
           });
         } else {
           playerData.push({
             shortname: player.Shortname,
-            role: 'bench',
+            type: 'bench',
+            home: team.Role === 'home',
           });
 
         }
@@ -42,7 +50,8 @@ class feedParser {
         for (const manager of managers) {
           playerData.push({
             shortname: manager.Shortname,
-            role: 'manager',
+            type: 'manager',
+            home: team.role === 'home',
         });
       }
     }
@@ -50,27 +59,31 @@ class feedParser {
     return playerData;
   }
 
-  filterPlayers(starting = 'starting', feedsFilePath){
-    const players = this.getPlayers(feedsFilePath);
+  filterNames(type = 'starting', feedsFilePath: any){
+    const players = this.getNames(feedsFilePath);
     const startingPlayers = [];
     for (const player of players) {
-        if(player.role === starting){
+        if(player.type === type){
           startingPlayers.push(player.shortname)
         }
     }
     return startingPlayers;
   }
 
-  getStartingPlayers(feedsFilePath){
-    return this.filterPlayers('starting', feedsFilePath);
+  getStartingPlayers(feedsFilePath: string){
+    return this.filterNames('starting', feedsFilePath);
   }
 
-  getBenchPlayers(feedsFilePath){
-    return this.filterPlayers('bench', feedsFilePath);
+  getBenchPlayers(feedsFilePath: string){
+    return this.filterNames('bench', feedsFilePath);
   }
 
-  getManagers(feedsFilePath){
-    return this.filterPlayers('manager', feedsFilePath);
+  getManagers(feedsFilePath: string){
+    return this.filterNames('manager', feedsFilePath);
+  }
+
+  getClubNames(feedsFilePath: string){
+    return this.filterNames('club', feedsFilePath);
   }
 
 }

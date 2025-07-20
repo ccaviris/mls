@@ -13,6 +13,14 @@ describe('Validate match rosters ', () => {
         await matchPage.isLoaded();
     });
 
+    it ('should validate club names', async () => {
+        const observedClubNames = await matchPage.getClubNames();
+        const expectedClubNames = feedParser.getClubNames(feedXml);
+        console.log(expectedClubNames.toString());
+        console.log(`Home team: ${observedClubNames.home} Away Team: ${observedClubNames.away}`)
+
+    })
+
     it('should validate starting rosters', async () => {
         const observedPlayers = await matchPage.getPlayerNames();
         const expectedPlayers = feedParser.getStartingPlayers(feedXml);

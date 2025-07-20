@@ -54,6 +54,19 @@ class MatchPage extends Page {
         return await super.isLoaded(this.selectors);
     }
 
+    public async getClubNames (){
+        const homeTeamNameElement = await this.homeClubName;
+        const awayTeamNameElement = await this.awayClubeName;
+
+        const homeClubName = await homeTeamNameElement.getText();
+        const awayClubName = await awayTeamNameElement.getText();
+
+        return {
+            home: homeClubName,
+            away: awayClubName
+        }
+    }
+
     public async getPlayerNames (playerType = 'starting'){
         let playerNames;
         switch (playerType) {
@@ -71,7 +84,7 @@ class MatchPage extends Page {
                 return null;
         }
         
-        const playerNameStrings = [];
+        const playerNameStrings: string[] = [];
         await playerNames.forEach(async (playerName) => {
             const name = await playerName.getText();
             playerNameStrings.push(name);
