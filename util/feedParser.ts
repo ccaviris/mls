@@ -51,7 +51,7 @@ class feedParser {
           playerData.push({
             shortname: manager.Shortname,
             type: 'manager',
-            home: team.role === 'home',
+            home: team.Role === 'home',
         });
       }
     }
@@ -87,7 +87,7 @@ class feedParser {
   }
 
   getHomeManagers(feedsFilePath: string){
-    return this.filterNames('manager', false, feedsFilePath);
+    return this.filterNames('manager', true, feedsFilePath);
   }
   getAwayManagers(feedsFilePath: string){
     return this.filterNames('manager', false, feedsFilePath);
