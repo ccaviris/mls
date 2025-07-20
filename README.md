@@ -10,6 +10,10 @@ To execute the tests, run `npm run wdio`.
 
 This includes the `feeds.xml` file. Any files that might be stored with information to assist the test would go here. In a real production setup, this likely would not exist and the xml data would likely be obtained dynamically from an API request. 
 
+## screenshotsVideoLogs
+
+This contains a screen recording of the test running through from start to finish, screenshots taken from the vieeo, and a copy of the console log, all from the same run.
+
 ## test / pageobjects
 
 This folder includes the page objects that are used to run the tests. Currently that is `page.ts` and `match.page.ts`. Everything is in the same directory. If tests across multiple parts of the product were covered by this test, this would be aranged in sub-folders.

@@ -1,0 +1,39 @@
+PS C:\Users\psych\VS_Code\mls> npm run wdio
+
+> wdio
+> wdio run ./wdio.conf.ts
+
+
+Execution of 1 workers started at 2025-07-20T23:17:14.462Z
+
+[0-0] RUNNING in chrome - file:///C:/Users/psych/VS_Code/mls/test/specs/test.ts
+
+DevTools listening on ws://127.0.0.1:4436/devtools/browser/ab9b8753-bbac-4da2-9e90-dd31d493e3e8
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1753053443.396023   23484 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+[8704:23112:0720/191728.836:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+[0-0] PASSED in chrome - file:///C:/Users/psych/VS_Code/mls/test/specs/test.ts
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[chrome 138.0.7204.158 windows #0-0] Running: chrome (v138.0.7204.158) on windows
+[chrome 138.0.7204.158 windows #0-0] Session ID: 4aaa8a31aff053ed6b919df1b6a18286
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] » test\specs\test.ts
+[chrome 138.0.7204.158 windows #0-0] Validate match rosters 
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate club names
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's starting roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the away club's starting roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's bench roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the away club's bench roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's manager roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the away club's manager roster
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] 7 passing (15.4s)
+
+
+Spec Files:      1 passed, 1 total (100% completed) in 00:00:20  
+
+PS C:\Users\psych\VS_Code\mls> 
