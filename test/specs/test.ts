@@ -5,13 +5,13 @@ import feedParser from '../../util/feedParser.ts'
 import compareArrays from '../../util/compareArrays.ts'
 
 describe('Validate match rosters ', () => {
-    it('should validate starting rosters', async () => {
+    before(async () => {
         await matchPage.open()
-        const observedPlayers = await matchPage.getPlayerNames();
-        console.log('Observed ' + observedPlayers.toString());
-        const expectedPlayers = feedParser.getStartingPlayers();
-        console.log('Expected ' + expectedPlayers.toString());
+    });
 
+    it('should validate starting rosters', async () => {
+        const observedPlayers = await matchPage.getPlayerNames();
+        const expectedPlayers = feedParser.getStartingPlayers();
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 })
