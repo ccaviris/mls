@@ -3,8 +3,12 @@ import path from 'path';
 import { XMLParser } from 'fast-xml-parser';
 
 
-class feedParser {
-
+export class feedParser {
+  private players: any[]
+  constructor(feedsFilePath: string){
+    this.players = this.getNames(feedsFilePath)
+  }
+  
   public getNames(feedsFilePath: any) {
     const feedsPath = path.join(__dirname, feedsFilePath);
     const feedsXml = fs.readFileSync(feedsPath, 'utf-8');
@@ -59,10 +63,9 @@ class feedParser {
     return playerData;
   }
 
-  filterNames(type = 'starting', home = true, feedsFilePath: any){
-    const players = this.getNames(feedsFilePath);
+  filterNames(type = 'starting', home = true){
     const startingPlayers = [];
-    for (const player of players) {
+    for (const player of this.players) {
         if(player.type === type && player.home === home){
           startingPlayers.push(player.shortname)
         }
@@ -70,36 +73,35 @@ class feedParser {
     return startingPlayers;
   }
 
-  getHomeStartingPlayers(feedsFilePath: string){
-    return this.filterNames('starting', true, feedsFilePath);
+  getHomeStartingPlayers(){
+    return this.filterNames('starting', true);
   }
 
-  getAwayStartingPlayers(feedsFilePath: string){
-    return this.filterNames('starting', false, feedsFilePath);
+  getAwayStartingPlayers(){
+    return this.filterNames('starting', false);
   }
 
-  getHomeBenchPlayers(feedsFilePath: string){
-    return this.filterNames('bench', true, feedsFilePath);
+  getHomeBenchPlayers(){
+    return this.filterNames('bench', true);
   }
 
-  getAwayBenchPlayers(feedsFilePath: string){
-    return this.filterNames('bench', false, feedsFilePath);
+  getAwayBenchPlayers(){
+    return this.filterNames('bench', false);
   }
 
-  getHomeManagers(feedsFilePath: string){
-    return this.filterNames('manager', true, feedsFilePath);
+  getHomeManagers(){
+    return this.filterNames('manager', true);
   }
-  getAwayManagers(feedsFilePath: string){
-    return this.filterNames('manager', false, feedsFilePath);
-  }
-
-  getHomeClubName(feedsFilePath: string){
-    return this.filterNames('club', true, feedsFilePath)[0];
+  getAwayManagers(){
+    return this.filterNames('manager', false);
   }
 
-  getAwayClubName(feedsFilePath: string){
-    return this.filterNames('club', false, feedsFilePath)[0];
+  getHomeClubName(){
+    return this.filterNames('club', true)[0];
+  }
+
+  getAwayClubName(){
+    return this.filterNames('club', false)[0];
   }
 
 }
-export default new feedParser();
