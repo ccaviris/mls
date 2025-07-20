@@ -24,10 +24,25 @@ class feedParser {
       const players = team.Players.Player;
 
       for (const player of players) {
-        playerData.push({
-          shortname: player.Shortname,
-          //Convert the string "true" or "false" to a boolean value
-          starting: player.Starting === 'true',
+        if(player.Starting === 'true'){
+          playerData.push({
+            shortname: player.Shortname,
+            role: 'starting',
+          });
+        } else {
+          playerData.push({
+            shortname: player.Shortname,
+            role: 'bench',
+          });
+
+        }
+      }
+      
+      const managers = team.TrainerStaff.Trainer;
+        for (const manager of managers) {
+          playerData.push({
+            shortname: manager.Shortname,
+            role: 'manager',
         });
       }
     }
@@ -35,11 +50,11 @@ class feedParser {
     return playerData;
   }
 
-  filterPlayers(starting = true, feedsFilePath){
+  filterPlayers(starting = 'starting', feedsFilePath){
     const players = this.getPlayers(feedsFilePath);
     const startingPlayers = [];
     for (const player of players) {
-        if(player.starting === starting){
+        if(player.role === starting){
           startingPlayers.push(player.shortname)
         }
     }
@@ -47,11 +62,15 @@ class feedParser {
   }
 
   getStartingPlayers(feedsFilePath = '../resources/feeds.xml'){
-    return this.filterPlayers(true, feedsFilePath);
+    return this.filterPlayers('starting', feedsFilePath);
   }
 
   getBenchPlayers(feedsFilePath = '../resources/feeds.xml'){
-    return this.filterPlayers(false, feedsFilePath);
+    return this.filterPlayers('bench', feedsFilePath);
+  }
+
+  getManagers(feedsFilePath = '../resources/feeds.xml'){
+    return this.filterPlayers('manager', feedsFilePath);
   }
 
 }
