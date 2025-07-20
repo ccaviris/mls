@@ -102,7 +102,7 @@ class MatchPage extends Page {
                 playerNames = await this.awayManagers;
                 break;
             default:
-                console.log(`Invalid input of ${playerType} in getPlayerNames function. Valid inputs inclue 'starting', 'bench', or 'manager'`)
+                console.log(`Invalid input of ${playerType} in getPlayerNames function. Valid inputs inclue 'startingHome', 'benchHome', 'managerHome', 'startingAway', 'benchAway', or 'managerAway'`)
                 return null;
         }
         
