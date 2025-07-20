@@ -5,7 +5,7 @@ import { XMLParser } from 'fast-xml-parser';
 
 class feedParser {
 
-  public getPlayers(feedsFilePath = '../resources/feeds.xml') {
+  public getPlayers(feedsFilePath) {
     const feedsPath = path.join(__dirname, feedsFilePath);
     const feedsXml = fs.readFileSync(feedsPath, 'utf-8');
     const parser = new XMLParser({
@@ -61,15 +61,15 @@ class feedParser {
     return startingPlayers;
   }
 
-  getStartingPlayers(feedsFilePath = '../resources/feeds.xml'){
+  getStartingPlayers(feedsFilePath){
     return this.filterPlayers('starting', feedsFilePath);
   }
 
-  getBenchPlayers(feedsFilePath = '../resources/feeds.xml'){
+  getBenchPlayers(feedsFilePath){
     return this.filterPlayers('bench', feedsFilePath);
   }
 
-  getManagers(feedsFilePath = '../resources/feeds.xml'){
+  getManagers(feedsFilePath){
     return this.filterPlayers('manager', feedsFilePath);
   }
 

@@ -4,6 +4,8 @@ import matchPage from '../pageobjects/match.page.ts'
 import feedParser from '../../util/feedParser.ts'
 import compareArrays from '../../util/compareArrays.ts'
 
+const feedXml = '../resources/feeds.xml';
+
 describe('Validate match rosters ', () => {
     before(async () => {
         await matchPage.open()
@@ -11,19 +13,19 @@ describe('Validate match rosters ', () => {
 
     it('should validate starting rosters', async () => {
         const observedPlayers = await matchPage.getPlayerNames();
-        const expectedPlayers = feedParser.getStartingPlayers();
+        const expectedPlayers = feedParser.getStartingPlayers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 
     it('should validate bench rosters', async () => {
         const observedPlayers = await matchPage.getPlayerNames('bench');
-        const expectedPlayers = feedParser.getBenchPlayers();
+        const expectedPlayers = feedParser.getBenchPlayers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 
     it('should validate manager rosters', async () => {
         const observedPlayers = await matchPage.getPlayerNames('manager');
-        const expectedPlayers = feedParser.getManagers();
+        const expectedPlayers = feedParser.getManagers(feedXml);
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
 })
