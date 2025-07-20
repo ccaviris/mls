@@ -14,5 +14,11 @@ describe('Validate match rosters ', () => {
         const expectedPlayers = feedParser.getStartingPlayers();
         expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
     })
+
+    it('should validate bench rosters', async () => {
+        const observedPlayers = await matchPage.getPlayerNames('bench');
+        const expectedPlayers = feedParser.getBenchPlayers();
+        expect(compareArrays.verifyIfEqual(observedPlayers, expectedPlayers)).to.be.true;
+    })
 })
 
