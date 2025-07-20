@@ -8,7 +8,7 @@ class MatchPage extends Page {
      * define selectors using getter methods
      */
     public get playerNames () {
-        return $$('.mls-o-player-block__player-name');
+        return $$('.mls-o-pitch__foreground  .mls-o-player-block__player-name');
     }
 
 
