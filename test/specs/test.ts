@@ -10,6 +10,7 @@ describe('Validate match rosters ', () => {
     before(async () => {
         await matchPage.open();
         await matchPage.waitForDialogueAndAcceptCookies();
+        await matchPage.isLoaded();
     });
 
     it('should validate starting rosters', async () => {

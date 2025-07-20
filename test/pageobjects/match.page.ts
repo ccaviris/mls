@@ -4,19 +4,27 @@ import Page from './page';
  * sub page for mthe match information
  */
 class MatchPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
+    
+    public get selectors (){
+        return {
+            startingPlayers: '.mls-o-pitch__foreground',
+            benchPlayers: '.mls-c-lineups__substitutions',
+            managers: '.mls-c-lineups__managers',
+            playerNames: '.mls-o-player-block__player-name'
+            
+        }
+    }
+
     public get startingPlayers () {
-        return $$('.mls-o-pitch__foreground .mls-o-player-block__player-name');
+        return $$(`${this.selectors.startingPlayers} ${this.selectors.playerNames}`);
     }
 
     public get benchPlayers () {
-        return $$('.mls-c-lineups__substitutions .mls-o-player-block__player-name')
+        return $$(`${this.selectors.benchPlayers} ${this.selectors.playerNames}`);
     }
 
     public get managers () {
-        return $$('.mls-c-lineups__managers .mls-o-player-block__player-name')
+        return $$(`${this.selectors.managers} ${this.selectors.playerNames}`);
     }
 
     /**
@@ -24,6 +32,10 @@ class MatchPage extends Page {
      */
     public open (urlPath = 'competitions/mls-regular-season/2025/matches/stlvspor-07-13-2025/lineups') {
         return super.open(urlPath);
+    }
+
+    public async isLoaded(){
+        return super.isLoaded(this.selectors);
     }
 
     public async getPlayerNames (playerType = 'starting'){

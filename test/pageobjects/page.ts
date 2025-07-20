@@ -4,8 +4,7 @@ import { browser } from '@wdio/globals'
 * main page object containing all methods, selectors and functionality
 * that is shared across all page objects
 */
-export default class Page {
-    
+export default class Page {  
     public get acceptAndContinueButton () {
         return $('button#onetrust-accept-btn-handler');
     }
@@ -15,6 +14,12 @@ export default class Page {
     */
     public open (path: string) {
         return browser.url(`https://www.mlssoccer.com/${path}`)
+    }
+
+    public async isLoaded(selectors) {
+        await selectors.forEach(async (selector) => {
+            await $(selector).waitForDisplayed();
+        });
     }
 
     public waitForDialogueAndAcceptCookies(){
