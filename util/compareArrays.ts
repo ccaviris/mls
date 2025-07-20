@@ -1,7 +1,7 @@
 class compareArrays {
 
 
-  public verifyIfEqual(firstArray, secondArray) {
+  public verifyIfEqual(firstArray:string[] = [], secondArray:string[] = []) {
     if(firstArray.sort().join(',')=== secondArray.sort().join(',')){
       return true
     }
