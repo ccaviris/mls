@@ -8,7 +8,8 @@ const feedXml = '../resources/feeds.xml';
 
 describe('Validate match rosters ', () => {
     before(async () => {
-        await matchPage.open()
+        await matchPage.open();
+        await matchPage.waitForDialogueAndAcceptCookies();
     });
 
     it('should validate starting rosters', async () => {

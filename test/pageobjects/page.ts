@@ -5,11 +5,21 @@ import { browser } from '@wdio/globals'
 * that is shared across all page objects
 */
 export default class Page {
+    
+    public get acceptAndContinueButton () {
+        return $('button#onetrust-accept-btn-handler');
+    }
     /**
     * Opens a sub page of the page
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     public open (path: string) {
         return browser.url(`https://www.mlssoccer.com/${path}`)
+    }
+
+    public waitForDialogueAndAcceptCookies(){
+        const accept = this.acceptAndContinueButton;
+        accept.waitForDisplayed();
+        accept.click();
     }
 }
