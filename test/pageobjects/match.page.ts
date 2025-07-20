@@ -31,16 +31,29 @@ class MatchPage extends Page {
         return $(`${this.selectors.awayClubHeader} ${this.selectors.clubNames}`)
     }
 
-    public get startingPlayers () {
-        return $$(`${this.selectors.startingPlayers} ${this.selectors.playerNames}`);
+    public get homeStartingPlayers () {
+        return $$(`${this.selectors.homeClubFormation} ${this.selectors.playerNames}`);
     }
 
-    public get benchPlayers () {
-        return $$(`${this.selectors.benchPlayers} ${this.selectors.playerNames}`);
+
+    public get awayStartingPlayers () {
+        return $$(`${this.selectors.awayClubFormation} ${this.selectors.playerNames}`);
     }
 
-    public get managers () {
-        return $$(`${this.selectors.managers} ${this.selectors.playerNames}`);
+    public get homeBenchPlayers () {
+        return $$(`${this.selectors.homeClubBench} ${this.selectors.playerNames}`);
+    }
+
+    public get awayBenchPlayers () {
+        return $$(`${this.selectors.awayClubBench} ${this.selectors.playerNames}`);
+    }
+
+    public get homeManagers () {
+        return $$(`${this.selectors.homeClubManagers} ${this.selectors.playerNames}`);
+    }
+
+    public get awayManagers () {
+        return $$(`${this.selectors.awayClubManagers} ${this.selectors.playerNames}`);
     }
 
     /**
@@ -67,17 +80,26 @@ class MatchPage extends Page {
         }
     }
 
-    public async getPlayerNames (playerType = 'starting'){
+    public async getPlayerNames (playerType = 'startingHome'){
         let playerNames;
         switch (playerType) {
-            case 'starting':
-                playerNames = await this.startingPlayers;
+            case 'startingHome':
+                playerNames = await this.homeStartingPlayers;
                 break;
-            case 'bench':
-                playerNames = await this.benchPlayers;
+            case 'benchHome':
+                playerNames = await this.homeBenchPlayers;
                 break
-            case 'manager':
-                playerNames = await this.managers;
+            case 'managerHome':
+                playerNames = await this.homeManagers;
+                break;
+            case 'startingAway':
+                playerNames = await this.awayStartingPlayers;
+                break;
+            case 'benchAway':
+                playerNames = await this.awayBenchPlayers;
+                break
+            case 'managerAway':
+                playerNames = await this.awayManagers;
                 break;
             default:
                 console.log(`Invalid input of ${playerType} in getPlayerNames function. Valid inputs inclue 'starting', 'bench', or 'manager'`)
