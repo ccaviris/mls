@@ -35,15 +35,24 @@ class feedParser {
     return playerData;
   }
 
-  getStartingPlayers(feedsFilePath = '../resources/feeds.xml'){
+  filterPlayers(starting = true, feedsFilePath){
     const players = this.getPlayers(feedsFilePath);
     const startingPlayers = [];
     for (const player of players) {
-        if(player.starting === true){
+        if(player.starting === starting){
           startingPlayers.push(player.shortname)
         }
+    }
+    return startingPlayers;
   }
-  return startingPlayers;
-}
+
+  getStartingPlayers(feedsFilePath = '../resources/feeds.xml'){
+    return this.filterPlayers(true, feedsFilePath);
+  }
+
+  getBenchPlayers(feedsFilePath = '../resources/feeds.xml'){
+    return this.filterPlayers(false, feedsFilePath);
+  }
+
 }
 export default new feedParser();
