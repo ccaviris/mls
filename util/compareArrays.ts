@@ -13,15 +13,13 @@ class compareArrays {
     //This string could be used in the error message within the test.
     let arraysMatch = true;
     for(const value of firstArray){
-      const index = secondArray.indexOf(value) 
-      console.log(index);
+      const index = secondArray.indexOf(value);
       if(index === -1){
         arraysMatch = false;
         console.log(`The vale ${value} was found in the first array but not the second`)
       } else {
         //Remove the found element to save time later
         secondArray.splice(index, 1)
-        console.log(secondArray.join(', '))
       }
     }
     //If we remove all elements from the first array found in the second array, what is left is values unique to the second array
