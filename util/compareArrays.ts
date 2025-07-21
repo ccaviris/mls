@@ -1,7 +1,7 @@
 class compareArrays {
 
 /**
- * A comparison of two array that prints discrepant values
+ * A comparison of two array and prints discrepant values
  * @param firstArray The first array to be comparison
  * @param secondArray The second array for comparison
  * @returns True if the two arrays contain the same values and false otherwise
