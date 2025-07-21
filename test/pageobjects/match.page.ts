@@ -5,11 +5,10 @@ import Page from './page';
  */
 class MatchPage extends Page {
     
-    public get selectors (){
+    //In addition to being used internally, these selectors are used to 
+    // validate that the page has loaded before starting test execution
+    private get selectors (){
         return {
-            startingPlayers: '.mls-o-pitch__foreground',
-            benchPlayers: '.mls-c-lineups__substitutions',
-            managers: '.mls-c-lineups__managers',
             playerNames: '.mls-o-player-block__player-name',
             homeClubHeader: '.--home',
             awayClubHeader: '.--away',
@@ -23,50 +22,58 @@ class MatchPage extends Page {
         }
     }
 
-    public get homeClubName () {
+    private get homeClubName () {
         return $(`${this.selectors.homeClubHeader} ${this.selectors.clubNames}`)
     }
 
-    public get awayClubeName () {
+    private get awayClubeName () {
         return $(`${this.selectors.awayClubHeader} ${this.selectors.clubNames}`)
     }
 
-    public get homeStartingPlayers () {
+    private get homeStartingPlayers () {
         return $$(`${this.selectors.homeClubFormation} ${this.selectors.playerNames}`);
     }
 
 
-    public get awayStartingPlayers () {
+    private get awayStartingPlayers () {
         return $$(`${this.selectors.awayClubFormation} ${this.selectors.playerNames}`);
     }
 
-    public get homeBenchPlayers () {
+    private get homeBenchPlayers () {
         return $$(`${this.selectors.homeClubBench} ${this.selectors.playerNames}`);
     }
 
-    public get awayBenchPlayers () {
+    private get awayBenchPlayers () {
         return $$(`${this.selectors.awayClubBench} ${this.selectors.playerNames}`);
     }
 
-    public get homeManagers () {
+    private get homeManagers () {
         return $$(`${this.selectors.homeClubManagers} ${this.selectors.playerNames}`);
     }
 
-    public get awayManagers () {
+    private get awayManagers () {
         return $$(`${this.selectors.awayClubManagers} ${this.selectors.playerNames}`);
     }
 
     /**
-     * overwrite specific options to adapt it to page object
+     * Overwrites the page open function
+     * @param urlpath a string with the URL path to follow the root URL
      */
     public open (urlPath = 'competitions/mls-regular-season/2025/matches/stlvspor-07-13-2025/lineups') {
         return super.open(urlPath);
     }
 
+    /**
+    *   This function is used to delay execution until the page is fully loaded
+    */
     public async isLoaded(){
         return await super.isLoaded(this.selectors);
     }
 
+    /**
+     * 
+     * @returns a key pair array with the keys 'home' and 'away' and string representing the home and away team names as valyues
+     */
     public async getClubNames (){
         const homeTeamNameElement = await this.homeClubName;
         const awayTeamNameElement = await this.awayClubeName;
@@ -80,6 +87,11 @@ class MatchPage extends Page {
         }
     }
 
+    /**
+     * 
+     * @param playerType A string with the value of 'startingHome', 'benchHome', 'managerHome', 'startingAway', 'benchAway', or 'managerAway' to denote what the desired output is
+     * @returns an array of names of the given type determined by playerType
+     */
     public async getPlayerNames (playerType = 'startingHome'){
         let playerNames;
         switch (playerType) {
