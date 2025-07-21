@@ -1,0 +1,77 @@
+PS C:\Users\psych\VS_Code\mls> npm run wdio
+
+> wdio
+> wdio run ./wdio.conf.ts
+
+
+Execution of 1 workers started at 2025-07-21T03:10:31.172Z
+
+[0-0] RUNNING in chrome - file:///C:/Users/psych/VS_Code/mls/test/specs/test.ts
+
+DevTools listening on ws://127.0.0.1:11237/devtools/browser/11535bbc-d4ff-4842-8570-8b18b3e6caf3
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1753067439.720438   20176 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+[27732:16352:0720/231042.919:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+[27732:16352:0720/231042.920:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+[0-0] The vale J. Pantemis was found in the first array but not the second
+[0-0] The second array contains the following values not found in the first array Constantine Caviris
+[0-0] AssertionError in "Validate match rosters .should validate the away club's bench roster"
+AssertionError: expected false to be true
+    at Context.<anonymous> (C:\Users\psych\VS_Code\mls\test\specs\test.ts:47:82)
+    at async Context.executeAsync (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1101:20)
+    at async Context.testFrameworkFnWrapper (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1173:14)
+[0-0] The vale S. Murray was found in the first array but not the second
+[0-0] The second array contains the following values not found in the first array J. Cash
+[0-0] AssertionError in "Validate match rosters .should validate the away club's manager roster"
+AssertionError: expected false to be true
+    at Context.<anonymous> (C:\Users\psych\VS_Code\mls\test\specs\test.ts:59:82)
+    at async Context.executeAsync (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1101:20)
+    at async Context.testFrameworkFnWrapper (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1173:14)
+[0-0] FAILED in chrome - file:///C:/Users/psych/VS_Code/mls/test/specs/test.ts
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[chrome 138.0.7204.158 windows #0-0] Running: chrome (v138.0.7204.158) on windows
+[chrome 138.0.7204.158 windows #0-0] Session ID: c05f8649d3814d0ee275ff83f96c0cdb
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] » test\specs\test.ts
+[chrome 138.0.7204.158 windows #0-0] Validate match rosters
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate club names
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's starting roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the away club's starting roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's bench roster
+[chrome 138.0.7204.158 windows #0-0]    ✖ should validate the away club's bench roster
+[chrome 138.0.7204.158 windows #0-0]    ✓ should validate the home club's manager roster
+[chrome 138.0.7204.158 windows #0-0]    ✖ should validate the away club's manager roster
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] 5 passing (14.7s)
+[chrome 138.0.7204.158 windows #0-0] 2 failing
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] 1) Validate match rosters  should validate the away club's bench roster
+[chrome 138.0.7204.158 windows #0-0] expected false to be true
+      actual expected
+
+      falsetrue
+
+[chrome 138.0.7204.158 windows #0-0] AssertionError: expected false to be true
+[chrome 138.0.7204.158 windows #0-0]     at Context.<anonymous> (C:\Users\psych\VS_Code\mls\test\specs\test.ts:47:82)
+[chrome 138.0.7204.158 windows #0-0]     at async Context.executeAsync (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1101:20)
+[chrome 138.0.7204.158 windows #0-0]     at async Context.testFrameworkFnWrapper (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1173:14)
+[chrome 138.0.7204.158 windows #0-0]
+[chrome 138.0.7204.158 windows #0-0] 2) Validate match rosters  should validate the away club's manager roster
+[chrome 138.0.7204.158 windows #0-0] expected false to be true
+      actual expected
+
+      falsetrue
+
+[chrome 138.0.7204.158 windows #0-0] AssertionError: expected false to be true
+[chrome 138.0.7204.158 windows #0-0]     at Context.<anonymous> (C:\Users\psych\VS_Code\mls\test\specs\test.ts:59:82)
+[chrome 138.0.7204.158 windows #0-0]     at async Context.executeAsync (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1101:20)
+[chrome 138.0.7204.158 windows #0-0]     at async Context.testFrameworkFnWrapper (C:\Users\psych\VS_Code\mls\node_modules\@wdio\utils\build\index.js:1173:14)
+
+
+Spec Files:      0 passed, 1 failed, 1 total (100% completed) in 00:00:19
+
+PS C:\Users\psych\VS_Code\mls> 
